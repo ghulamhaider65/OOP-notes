@@ -1,5 +1,10 @@
 """Core OOP example: an Item class with attributes, methods, and utilities.
 
+OOP Pillars covered here:
+- Encapsulation (private attributes + properties)
+- Class/Instance attributes (structure and behavior)
+- Abstraction (public `send_email` hides private helpers)
+
 This file demonstrates key OOP ideas:
 - Class vs instance attributes (`pay_rate`, `all` vs per-object fields)
 - Encapsulation (private attributes like `__name` and `__price`)

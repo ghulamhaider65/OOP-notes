@@ -1,4 +1,7 @@
-"""Phone subclass showing inheritance and extra state."""
+"""Phone subclass showing inheritance and extra state.
+
+OOP Pillar: Inheritance (phone extends item with `broken_phones`).
+"""
 
 from item import item
 

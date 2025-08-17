@@ -1,5 +1,7 @@
 """Polymorphism demo: same function works with different types.
 
+OOP Pillar: Polymorphism (len works for both str and list types).
+
 Here, the built-in function `len()` is used with a string and a list.
 It behaves correctly because both types implement a length protocol.
 """

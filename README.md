@@ -10,6 +10,7 @@ What’s inside (files map to concepts)
 - `polymor.py` — Polymorphism demo using the same function on different types
 - `main.py` — Tiny entry point to try the classes quickly
 - `items.csv` — Sample data for the CSV constructor in `item.py`
+- `abstraction.py` — Abstraction with an abstract base class and two implementations
 
 How to use these notes
 1) Open each file and read the comments/docstrings.
@@ -48,6 +49,12 @@ Key OOP concepts explained
 8) Polymorphism
 - Built-in example: `len()` works on strings and lists (`polymor.py`).
 - Idea: code that works with different types as long as they support the needed behavior.
+
+Where to find each pillar in code
+- Abstraction: `abstraction.py` (Notifier ABC), `item.py` (`send_email` hides internals)
+- Encapsulation: `item.py` (private `__price`, `__name`, properties)
+- Inheritance: `phone.py`, `keyboard.py` (both extend `item`)
+- Polymorphism: `polymor.py` and `abstraction.py` (same interface, different behavior)
 
 Quick start (run these)
 - Run the tiny demo:

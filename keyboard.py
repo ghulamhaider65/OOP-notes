@@ -1,4 +1,7 @@
-"""Keyboard subclass example showing simple inheritance."""
+"""Keyboard subclass example showing simple inheritance.
+
+OOP Pillar: Inheritance (keybord extends item without new fields).
+"""
 
 from item import item
 
