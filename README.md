@@ -1,43 +1,82 @@
-# OOP Notes (Python) — Simple and Practical
+# Python OOP Notes — Complete, Practical, and Simple
 
-This repo contains short, easy examples to understand Object-Oriented Programming (OOP) in Python.
+Use this repo to learn and revise Object-Oriented Programming (OOP) in Python using small, focused examples. The code is intentionally simple, heavily commented, and ready to run.
 
-What's inside
-- `class.py`: The simplest class example (methods and instance attributes)
-- `item.py`: A full example with properties, class attributes, class/staticmethods
-- `phone.py`: Inheritance example that adds a new attribute
-- `keyboard.py`: Simple inheritance without adding new fields
-- `polymor.py`: Polymorphism demo using `len()` on different types
-- `main.py`: Small script to quickly try the classes
-- `items.csv`: Data used by `item.instantiate_from_csv()`
+What’s inside (files map to concepts)
+- `class.py` — Your first class: methods and instance attributes
+- `item.py` — Core OOP ideas: encapsulation, properties, class/instance attributes, classmethod, staticmethod, dunder `__repr__`
+- `phone.py` — Inheritance with an extra attribute (`broken_phones`)
+- `keyboard.py` — Simple inheritance with no new attributes
+- `polymor.py` — Polymorphism demo using the same function on different types
+- `main.py` — Tiny entry point to try the classes quickly
+- `items.csv` — Sample data for the CSV constructor in `item.py`
 
-Key OOP ideas in this project
+How to use these notes
+1) Open each file and read the comments/docstrings.
+2) Run `main.py` to see a quick demo.
+3) Try the optional exercises at the end to practice.
+
+Key OOP concepts explained
 1) Class vs Instance
-	- Class: a blueprint (e.g., `item`) that defines data and behavior
-	- Instance: an object created from a class (e.g., `item()`, `phone()`)
+- Class: a blueprint that defines data and behavior (e.g., `class item:`).
+- Instance: a concrete object created from the class (e.g., `p = item(...)`).
 
-2) Encapsulation
-	- We hide internal details like `__price` and `__name` and expose them using
-	  properties (`name`, `price`). This keeps the object valid.
+2) Encapsulation (hiding internal details)
+- In `item.py`, `__name` and `__price` are private. Access them via properties.
+- Why: keeps objects valid and prevents accidental misuse.
 
-3) Class attributes vs Instance attributes
-	- Class attributes: shared by all objects (e.g., `pay_rate` and `all`)
-	- Instance attributes: unique per object (e.g., `quantity` on each item)
+3) Properties (getters/setters in Python style)
+- `@property` exposes read access; `@name.setter` validates and updates safely.
+- Example: `item.name` is limited to a max length; invalid values raise errors.
 
-4) Inheritance
-	- `phone(item)`: adds `broken_phones` and reuses `item` logic
-	- `keybord(item)`: reuses `item` logic without new fields
+4) Class vs Instance attributes
+- Class attributes are shared: `item.pay_rate` and `item.all` (a registry list).
+- Instance attributes are unique per object: e.g., `quantity`.
 
-5) Class methods and Static methods
-	- `@classmethod instantiate_from_csv`: alternative constructor that reads `items.csv`
-	- `@staticmethod is_integer`: a helper that doesn't depend on a specific object
+5) Methods you should know
+- Instance methods: operate on one object (`calculate_total_price`).
+- Class methods (`@classmethod`): alternate constructors like `instantiate_from_csv()`.
+- Static methods (`@staticmethod`): utility functions like `is_integer()`.
 
-6) Dunder method
-	- `__repr__`: returns a helpful string when you print objects or lists of them
+6) Inheritance
+- `phone(item)`: adds `broken_phones` while reusing base logic.
+- `keybord(item)`: inherits behavior without adding new fields.
 
-Try it
-1) Run `python main.py` and see output from a `keybord` instance.
-2) Open `item.py` and read the comments/docstrings for the full explanation.
-3) (Optional) Uncomment lines in `main.py` to try CSV loading and discounts.
+7) Dunder (special) methods
+- `__repr__`: returns a helpful string for debugging and printing lists of objects.
 
-Tip: Read the code top-to-bottom. The comments explain the “why” of each part.
+8) Polymorphism
+- Built-in example: `len()` works on strings and lists (`polymor.py`).
+- Idea: code that works with different types as long as they support the needed behavior.
+
+Quick start (run these)
+- Run the tiny demo:
+	- python main.py
+- Load items from CSV (uncomment in `main.py`):
+	- item.instantiate_from_csv()
+	- print(item.all)
+
+Reading guide per file
+- `class.py`: Minimal class to see how methods and instance attributes stick together.
+- `item.py`: The “full” example. Read its comments to understand:
+	- Why we use private attributes and properties.
+	- How class attributes differ from instance attributes.
+	- How `@classmethod` implements an alternate constructor from a CSV file.
+	- How `@staticmethod` provides a utility that doesn’t depend on one object.
+	- Why `__repr__` is useful during debugging.
+- `phone.py`: Shows how a subclass adds a new attribute and validates it.
+- `keyboard.py`: Inherits everything from `item` as-is.
+- `polymor.py`: Demonstrates polymorphism with a built-in function.
+
+Practice (short exercises)
+- Add a new subclass `mouse(item)` with a `dpi` attribute and basic validation.
+- In `item.py`, add a method `increase_stock(n)` to add to `quantity` (n must be >= 0).
+- Extend `polymor.py` with your own function that works on any object having a method `export()` (duck typing idea).
+
+FAQ
+- Why are class names lowercase like `item`? The original project used this style; we kept it to match your code. In production code, classes are usually `CamelCase` like `Item`.
+- Why private attributes (`__price`)? To prevent direct modification and centralize validation.
+- Why use `__repr__`? It makes interactive sessions and logs much easier to read.
+
+Tip
+- Read top-to-bottom, run small experiments, and keep notes directly in comments. The goal is clarity, not complexity.
