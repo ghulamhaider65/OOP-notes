@@ -10,8 +10,8 @@ What’s inside (files map to concepts)
 - `polymor.py` — Polymorphism demo using the same function on different types
 - `main.py` — Tiny entry point to try the classes quickly
 - `items.csv` — Sample data for the CSV constructor in `item.py`
-- `abstraction.py` — Abstraction with an abstract base class and two implementations
-
+- `abstraction.py` — Abstraction with an abstract base class and two implementations- `fraction.py` — Basic Fraction class with `__str__` dunder method for custom string representation
+- `xyz.py` — Interactive ATM system demo with menu-driven operations (PIN, deposit, withdraw, balance check)
 How to use these notes
 1) Open each file and read the comments/docstrings.
 2) Run `main.py` to see a quick demo.
@@ -73,8 +73,12 @@ Reading guide per file
 	- Why `__repr__` is useful during debugging.
 - `phone.py`: Shows how a subclass adds a new attribute and validates it.
 - `keyboard.py`: Inherits everything from `item` as-is.
-- `polymor.py`: Demonstrates polymorphism with a built-in function.
-
+- `polymor.py`: Demonstrates polymorphism with a built-in function.- `fraction.py`: Simple class showing `__str__` dunder method for custom object representation.
+- `xyz.py`: Practical ATM application demonstrating:
+	- Constructor initialization with default values.
+	- User input handling and menu-driven interface.
+	- Instance methods working together (create_pin, deposit, withdraw, check_balance).
+	- Control flow with while loop and conditional statements.
 Practice (short exercises)
 - Add a new subclass `mouse(item)` with a `dpi` attribute and basic validation.
 - In `item.py`, add a method `increase_stock(n)` to add to `quantity` (n must be >= 0).
