@@ -1,7 +1,7 @@
 class Atm:
     # constructor
     def __init__(self):
-        self.balance = 1000
+        self.balance = 0
         self.pin = ""
 
     # Menu method
@@ -70,3 +70,10 @@ class Atm:
 
 atm = Atm()
 atm.menu()
+
+
+
+
+
+
+
