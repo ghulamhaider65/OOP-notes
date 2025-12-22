@@ -23,7 +23,7 @@ class VendingMachine:
         self.products = {}
         self.balance = 0
 
-    def add_products(self, product):
+    def add_product(self, product):
         self.products[product.code] = product
 
     def display_products(self):
@@ -65,3 +65,36 @@ class VendingMachine:
         if self.balance > 0:
             print(f"Returning change : {self.balance}")
             self.balance = 0
+
+
+def main():
+    vm = VendingMachine()
+    vm.add_product(product("A1", "Chips", 50, 5))
+    vm.add_product(product("A2", "Soda", 80, 3))
+    vm.add_product(product("B1", "Chocolate", 100, 2))
+
+    while True:
+        vm.display_products()
+
+        print("\n1. Insert Money")
+        print("2, select product")
+        print("3, Exit")
+
+        choice = input("choose an option:")
+
+        if choice == "1":
+            amount = int(input("Enter ammount: "))
+            vm.insert_money(amount)
+
+        elif choice == "2":
+            code = input("Enter product code: ").upper()
+            vm.select_product(code)
+
+        elif choice == "3":
+            print("Thank you for using the vanding machine")
+            break
+
+        else:
+            print("Invalid option")
+
+main()
