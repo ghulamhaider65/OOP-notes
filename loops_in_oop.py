@@ -35,10 +35,27 @@ class Counter:
 
 # for loop for multiple objects
 
+# class Product:
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
+
+# class Store:
+#     def __init__(self):
+#         self.products = []
+
+#     def add_products(self, product):
+#         self.products.append(product)
+
+#     def show_products(self):
+#         for p in self.products:
+#             print(p.name, " ", p.price)
+
+# testing
 class Product:
     def __init__(self, name, price):
-        self.name = name
         self.price = price
+        self.name = name
 
 class Store:
     def __init__(self):
@@ -49,9 +66,7 @@ class Store:
 
     def show_products(self):
         for p in self.products:
-            print(p.name, " ", p.price)
-
-# testing
+            print(self.price)
 
 s = Store()
 s.add_products(Product("Pen", 10))
@@ -59,3 +74,5 @@ s.add_products(Product("Bood", 200))
 s.add_products(Product("Bag", 1500))
 
 s.show_products()
+
+
